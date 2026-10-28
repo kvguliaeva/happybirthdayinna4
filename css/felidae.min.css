@@ -1,0 +1,9 @@
+/* Felidae разработан Дарьей Казаковой в Школе дизайна НИУ ВШЭ. */
+@font-face {
+    font-family: "SMHeadersFont";
+    src: url("../assets/fonts/Felidae-Regular.woff2") format("woff2"),
+         url("../assets/fonts/Felidae.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,43 @@
+/* Clearly visible entrances, sequenced after the envelope opens. */
+html.text-animations-ready #invitation-content .invitation-reveal {
+    --reveal-distance: 32px;
+    --reveal-blur: 3px;
+    --reveal-scale: 1;
+    --reveal-duration: 1.5s;
+    opacity: 0;
+    filter: blur(var(--reveal-blur));
+    transform: translate3d(0, var(--reveal-distance), 0) scale(var(--reveal-scale));
+}
+
+html.text-animations-ready #invitation-content .inna-greeting-title.invitation-reveal {
+    --reveal-distance: 48px;
+    --reveal-blur: 4px;
+    --reveal-duration: 2s;
+}
+
+html.text-animations-ready #invitation-content .invitation-reveal.is-revealed {
+    animation: inna-text-entrance var(--reveal-duration) cubic-bezier(.22, .61, .36, 1) both;
+    animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes inna-text-entrance {
+    from {
+        opacity: 0;
+        filter: blur(var(--reveal-blur));
+        transform: translate3d(0, var(--reveal-distance), 0) scale(var(--reveal-scale));
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.text-animations-ready #invitation-content .invitation-reveal {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        animation: none;
+    }
+}

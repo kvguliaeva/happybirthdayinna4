@@ -1,0 +1,117 @@
+/* Supplied watercolor paper and the original Lilies vector artwork. */
+.sm-datetime,
+.sm-dress-code,
+.sm-location,
+.sm-footer {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.sm-datetime > .container,
+.sm-dress-code > .container,
+.sm-location__content,
+.sm-footer > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sm-datetime::before,
+.sm-dress-code::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url("../assets/images/nude-watercolor.jpg") center / cover no-repeat;
+    opacity: .55;
+    pointer-events: none;
+}
+
+.sm-dress-code::before {
+    background-position: center 58%;
+    opacity: .48;
+}
+
+.sm-date__calendar {
+    background-color: rgba(255, 251, 247, .82);
+}
+
+.sm-location::before,
+.sm-location::after,
+.sm-footer::before,
+.sm-footer::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 200px;
+    height: 425px;
+    background: url("../assets/images/lily-sprig.svg") center / contain no-repeat;
+    opacity: .62;
+    pointer-events: none;
+}
+
+.sm-location::before {
+    left: max(-30px, calc(50% - 550px));
+    top: 50%;
+    transform: translateY(-50%) rotate(-12deg);
+}
+
+.sm-location::after {
+    right: max(-30px, calc(50% - 550px));
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1) rotate(-12deg);
+}
+
+.sm-footer::before {
+    left: max(-60px, calc(50% - 480px));
+    bottom: -100px;
+    transform: rotate(20deg);
+    opacity: .48;
+}
+
+.sm-footer::after {
+    right: max(-60px, calc(50% - 480px));
+    bottom: -100px;
+    transform: scaleX(-1) rotate(20deg);
+    opacity: .48;
+}
+
+@media (max-width: 700px) {
+    .sm-datetime::before { opacity: .46; }
+    .sm-dress-code::before { opacity: .4; }
+
+    .sm-location::before,
+    .sm-location::after {
+        width: 140px;
+        height: 300px;
+        opacity: .52;
+    }
+    .sm-location::before {
+        left: -66px;
+        top: -60px;
+        transform: rotate(-18deg);
+    }
+    .sm-location::after {
+        right: -76px;
+        top: auto;
+        bottom: -65px;
+        transform: scaleX(-1) rotate(-18deg);
+    }
+
+    .sm-footer::before,
+    .sm-footer::after {
+        width: 140px;
+        height: 300px;
+        bottom: -100px;
+        opacity: .48;
+    }
+    .sm-footer::before { left: -60px; }
+    .sm-footer::after { right: -60px; }
+}
+
+@media (max-width: 380px) {
+    .sm-location::before { left: -90px; opacity: .44; }
+    .sm-location::after { right: -94px; opacity: .44; }
+    .sm-footer::before { left: -76px; }
+    .sm-footer::after { right: -76px; }
+}

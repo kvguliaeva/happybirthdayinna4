@@ -1,0 +1,138 @@
+/* One type family throughout the invitation. Existing artwork and colors stay. */
+@font-face {
+    font-family: "InnaSerif";
+    src: url("../assets/fonts/Cormorant-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "InnaSerif";
+    src: url("../assets/fonts/Cormorant-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+.sm-section-type-2 { --bg-color: #efe1db; }
+#invitation-content,
+#invitation-content :where(.sm-title, .sm-text, .sm-date,
+    .sm-date__calendar__month, .sm-date__calendar__day, .sm-date__calendar__num,
+    .sm-footer__title, .sm-btn, .inna-farewell-greeting, .inna-signature) {
+    font-family: "InnaSerif", serif;
+    font-style: normal;
+    font-weight: 400;
+}
+#invitation-content .sm-title {
+    font-size: 46px;
+    line-height: 1.15;
+    text-transform: none;
+}
+#invitation-content .sm-text { font-size: 26px; line-height: 1.45; }
+#invitation-content .inna-greeting-title {
+    max-width: none;
+    white-space: nowrap;
+    font-size: 56px;
+    line-height: 1.2;
+}
+.inna-greeting-title:focus { outline: none; }
+.inna-copy p { margin: 0; }
+.inna-copy p + p { margin-top: .85em; }
+.inna-copy strong { font-weight: 500; }
+#invitation-content .sm-date__calendar__month {
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: .015em;
+    text-transform: none;
+}
+.sm-date__calendar__month i { font-style: normal; }
+#invitation-content .sm-date__calendar__day { font-size: 19px; line-height: 1.2; }
+#invitation-content .sm-date__calendar__num { font-size: 34px; line-height: 1.2; }
+#invitation-content .sm-datetime .sm-date {
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: .04em;
+    word-spacing: normal;
+}
+#invitation-content .inna-map-button {
+    min-height: 48px;
+    padding: 12px 32px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.2;
+    background-color: #efe1db;
+}
+#invitation-content .inna-map-button:hover { background-color: #e4d2c9; }
+
+.inna-location-detail p { margin: 0; }
+#invitation-content .inna-location-detail {
+    font-size: 28px;
+    line-height: 1.35;
+}
+.inna-location-detail .inna-location-label {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    line-height: 1.2;
+    font-weight: 500;
+}
+.inna-location-detail > p { font-weight: 500; }
+#invitation-content .sm-number-active::after {
+    width: 62px;
+    height: 58px;
+    background-image: url("../assets/images/calendar-heart-background.svg");
+    background-position: center;
+    background-size: contain;
+    transform: translate(-50%, calc(-50% + 3px));
+}
+
+/* Dress code reads as a short note rather than a separate large feature. */
+.sm-dress-code { padding: 48px 24px; }
+.sm-dress-code .container { gap: 0; }
+#invitation-content .sm-dress-code .sm-title {
+    margin: 0 auto;
+    font-size: 28px;
+    line-height: 1.2;
+}
+.sm-dress-code .inna-dress-lines {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    margin: 16px auto 0;
+}
+#invitation-content .sm-dress-code .inna-dress-text {
+    max-width: none;
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.4;
+}
+#invitation-content .sm-dress-code .inna-dress-text + .inna-dress-text { margin-top: 8px; }
+
+.sm-footer { padding: 66px 24px 80px; }
+#invitation-content .sm-footer__title {
+    max-width: 650px;
+    margin-top: 0;
+    font-size: 30px;
+    line-height: 1.45;
+    text-align: center;
+}
+#invitation-content .inna-farewell-greeting { font-size: 42px; line-height: 1.3; }
+#invitation-content .inna-signature { font-size: 56px; line-height: 1.3; }
+
+@media (max-width: 500px) {
+    #invitation-content .sm-title { font-size: 38px; }
+    #invitation-content .sm-text { font-size: 22px; line-height: 1.45; }
+    #invitation-content .inna-location-detail { font-size: 24px; line-height: 1.35; }
+    #invitation-content .inna-greeting-title { font-size: clamp(32px, 8.8vw, 40px); }
+    #invitation-content .sm-date__calendar__month { font-size: 30px; }
+    #invitation-content .sm-date__calendar__day { font-size: 17px; }
+    #invitation-content .sm-date__calendar__num { font-size: 23px; }
+    #invitation-content .sm-number-active::after { width: 44px; height: 42px; }
+    #invitation-content .sm-datetime .sm-date { font-size: 30px; }
+    #invitation-content .inna-map-button { font-size: 20px; }
+    .sm-dress-code { padding: 36px 26px 40px; }
+    #invitation-content .sm-dress-code .sm-title { font-size: 26px; }
+    #invitation-content .sm-dress-code .inna-dress-text { font-size: 21px; }
+    .sm-footer { padding: 54px 24px 64px; }
+    #invitation-content .sm-footer__title { font-size: 26px; line-height: 1.4; }
+    #invitation-content .inna-farewell-greeting { font-size: 36px; }
+    #invitation-content .inna-signature { font-size: 48px; }
+}

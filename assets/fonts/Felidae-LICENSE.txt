@@ -1,0 +1,10 @@
+Felidae разработан Дарьей Казаковой в Школе дизайна НИУ ВШЭ.
+
+Сведения об авторе и условиях использования:
+https://design.hse.ru/lab/hsefonts
+
+Источник файлов:
+https://github.com/HSEADC/Synapse-Site/tree/dd588cc16549e6a9fcdeb0db18c54d3ca602334f/dev_build/fonts/felidae
+
+На странице HSE Fonts указана лицензия Creative Commons и условие указания авторства.
+Файлы шрифта не изменены.

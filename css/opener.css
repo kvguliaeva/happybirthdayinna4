@@ -1,0 +1,70 @@
+html.invitation-closed,
+html.invitation-closed body {
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+.invitation-closed #invitation-content { visibility: hidden; }
+.invitation-opening #invitation-content { visibility: visible; }
+
+.invitation-opener {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    overflow: hidden;
+    isolation: isolate;
+    height: 100vh;
+    height: 100svh;
+}
+.invitation-closed .invitation-opener { display: block; }
+.invitation-opener__panel {
+    position: absolute;
+    top: -4%;
+    height: 108%;
+    pointer-events: none;
+    will-change: transform;
+}
+.invitation-opener__panel img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.invitation-opener__panel--right { left: -1.25%; width: 102.8125%; }
+.invitation-opener__panel--left { left: 0; width: 58.4375%; }
+.invitation-opener__emblem {
+    position: absolute;
+    top: min(54.6875vw, calc(50svh - 100px));
+    left: 50%;
+    width: min(64.6875vw, 300px);
+    aspect-ratio: 1;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+.invitation-opener__seal {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 14px rgba(109, 69, 61, .12));
+}
+.invitation-opening .invitation-opener__panel--right {
+    animation: invitation-open-right 3s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+.invitation-opening .invitation-opener__panel--left {
+    animation: invitation-open-left 3s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+.invitation-opening .invitation-opener__seal {
+    animation: invitation-fade-seal .9s ease-out forwards;
+}
+@keyframes invitation-open-right { to { transform: translateX(104%); } }
+@keyframes invitation-open-left { to { transform: translateX(-110%); } }
+@keyframes invitation-fade-seal { to { opacity: 0; transform: scale(.94); } }
+
+@media (min-width: 640px) {
+    .invitation-opener__panel img { object-fit: cover; }
+    .invitation-opener__panel--right img { object-position: right center; }
+    .invitation-opener__panel--left img { object-position: left center; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .invitation-opening .invitation-opener * { animation-duration: .15s; }
+}
